@@ -21,6 +21,12 @@ const config = defineConfig({
   nitro: {
     preset: 'vercel',
     compatibilityDate: '2026-01-09',
+    rollupConfig: {
+      external: [],
+    },
+    externals: {
+      inline: [/@tanstack/],
+    },
   },
 })
 
