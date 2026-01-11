@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
 import {
   Zap,
   Server,
@@ -6,6 +6,8 @@ import {
   Shield,
   Waves,
   Sparkles,
+  ShoppingBag,
+  LayoutDashboard,
 } from 'lucide-react'
 
 export const Route = createFileRoute('/')({ component: App })
@@ -76,21 +78,31 @@ function App() {
             Build modern applications with server functions, streaming, and type
             safety.
           </p>
-          <div className="flex flex-col items-center gap-4">
+          <div className="flex flex-col items-center gap-6">
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link
+                to="/products"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-lg transition-all shadow-lg shadow-blue-500/50 hover:scale-105"
+              >
+                <ShoppingBag className="w-5 h-5" />
+                Voir les produits (Full SSR)
+              </Link>
+              <Link
+                to="/dashboard"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white font-semibold rounded-lg transition-all shadow-lg shadow-pink-500/50 hover:scale-105"
+              >
+                <LayoutDashboard className="w-5 h-5" />
+                Dashboard Admin (SPA)
+              </Link>
+            </div>
             <a
               href="https://tanstack.com/start"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-3 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-lg transition-colors shadow-lg shadow-cyan-500/50"
+              className="px-6 py-2 bg-slate-700 hover:bg-slate-600 text-cyan-400 font-semibold rounded-lg transition-colors border border-slate-600"
             >
               Documentation
             </a>
-            <p className="text-gray-400 text-sm mt-2">
-              Begin your TanStack Start journey by editing{' '}
-              <code className="px-2 py-1 bg-slate-700 rounded text-cyan-400">
-                /src/routes/index.tsx
-              </code>
-            </p>
           </div>
         </div>
       </section>
